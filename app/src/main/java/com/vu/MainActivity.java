@@ -87,7 +87,6 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
                 loadComic();
             }
         });
-
     }
 
     private void loadBanner() {
@@ -131,7 +130,8 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
                 }
                 // call listener
                 iComicLoadDone.onComicLoadDoneListener(comicList);
-            }
+                swipeRefreshLayout.setRefreshing(false);
+        }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
