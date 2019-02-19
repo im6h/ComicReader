@@ -1,11 +1,14 @@
 package com.vu;
 
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.Filter;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -87,6 +90,14 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
                 loadComic();
             }
         });
+        btnFilter = findViewById(R.id.btn_show_filter_search);
+        btnFilter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, FilterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     private void loadBanner() {
@@ -131,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements IBannerLoadDone, 
                 // call listener
                 iComicLoadDone.onComicLoadDoneListener(comicList);
                 swipeRefreshLayout.setRefreshing(false);
-        }
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
