@@ -6,6 +6,7 @@ import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.github.chrisbanes.photoview.PhotoView;
 import com.squareup.picasso.Picasso;
@@ -43,6 +44,8 @@ public class MyViewPaperAdapter extends PagerAdapter {
         View view = LayoutInflater.from(context).inflate(R.layout.view_paper_item,container,false);
         PhotoView view_image =view.findViewById(R.id.paper_image);
         Picasso.get().load(mList.get(position)).into(view_image);
+        TextView txt = view.findViewById(R.id.txt_numberpage);
+        txt.setText(new StringBuilder().append(position+1).append("/").append(mList.size()).toString());
         container.addView(view);
         return view;
     }

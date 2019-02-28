@@ -1,8 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.github.chrisbanes.photoview.PhotoView
+
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/paper_image"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:weightSum="10"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@android:color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <com.github.chrisbanes.photoview.PhotoView
+        android:layout_weight="9.6"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/paper_image"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
-</com.github.chrisbanes.photoview.PhotoView>
+    </com.github.chrisbanes.photoview.PhotoView>
+    <TextView
+        android:id="@+id/txt_numberpage"
+        android:layout_weight="0.4"
+        android:text="11/64"
+        android:textColor="@android:color/black"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="0dp" />
+</LinearLayout>

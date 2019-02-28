@@ -28,9 +28,12 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:layout_centerHorizontal="true"
+            android:gravity="center_horizontal"
             android:layout_toRightOf="@id/chapter_back"
             android:layout_toLeftOf="@id/chapter_next"
-            android:text="NO PAGE NUMBER"
+            android:textSize="20dp"
+            android:textStyle="italic"
+            android:text="11/64"
             android:textColor="@android:color/white"
              />
 
